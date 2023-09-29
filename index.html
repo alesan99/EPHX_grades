@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPHX Grade Calculator</title>
+</head>
+
+<html>
+	<h1>EPHX Grade Calculator</h1>
+
+	<table border="1">
+        <tbody>
+            <!-- Rows -->
+            <tr>
+                <!-- Cells in Row 1 -->
+                <td></td>
+                <td>Quiz 1</td>
+                <td>Quiz 2</td>
+                <td>Quiz 3</td>
+                <td>Test</td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 1 -->
+                <td>Kinematics</td>
+                <td><input type="number" id="q1n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q2n1')"></td>
+                <td><input type="number" id="q1n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q2n2')"></td>
+                <td><input type="number" id="q1n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q2n3')"></td>
+                <td><input type="number" id="t1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 't2')"></td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 2 -->
+                <td>Energy</td>
+                <td><input type="number" id="q2n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q3n1')"></td>
+                <td><input type="number" id="q2n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q3n2')"></td>
+                <td><input type="number" id="q2n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q3n3')"></td>
+                <td><input type="number" id="t2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 't3')"></td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 3 -->
+                <td>Oscillatory Motion</td>
+                <td><input type="number" id="q3n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q4n1')"></td>
+                <td><input type="number" id="q3n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q4n2')"></td>
+                <td><input type="number" id="q3n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q4n3')"></td>
+                <td><input type="number" id="t3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 't4')"></td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 4 -->
+                <td>Newton's Laws</td>
+                <td><input type="number" id="q4n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q5n1')"></td>
+                <td><input type="number" id="q4n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q5n2')"></td>
+                <td><input type="number" id="q4n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q5n3')"></td>
+                <td><input type="number" id="t4" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 't5')"></td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 5 -->
+                <td>Momentum</td>
+                <td><input type="number" id="q5n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q6n1')"></td>
+                <td><input type="number" id="q5n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q6n2')"></td>
+                <td><input type="number" id="q5n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'q6n3')"></td>
+                <td><input type="number" id="t5" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 't6')"></td>
+            </tr>
+            <tr>
+                <!-- Cells in Row 6 -->
+                <td>Thermodynamics</td>
+                <td><input type="number" id="q6n1" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'testPrep')"></td>
+                <td><input type="number" id="q6n2" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'testPrep')"></td>
+                <td><input type="number" id="q6n3" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'testPrep')"></td>
+                <td><input type="number" id="t6" maxlength="3" min="0" max="100" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'testPrep')"></td>
+            </tr>
+        </tbody>
+    </table>
+
+	<p>
+    <label for="testPrep">Test Prep: </label>
+    <input type="number" maxlength="3" min="0" max="100" id="testPrep" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'extraCredit')">
+
+    <label for="extraCredit">Extra Credit: </label>
+    <input type="number" maxlength="1" min="0" max="3" id="extraCredit" oninput="calculate_grade()">
+
+    <p id="grade"></p>
+	<script src="calc.js"></script>
+
+	<img src="fail.jpg" alt="fail" id="failImage" style="display: none;">
+	<img src="good.jpg" alt="good" id="goodImage" style="display: none;">
+</html>
