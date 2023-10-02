@@ -72,10 +72,10 @@
     </table>
 
 	<p>
-    <label for="testPrep">Test Prep: </label>
+    <label for="testPrep">Test Prep (100 max): </label>
     <input type="number" maxlength="3" min="0" max="100" id="testPrep" oninput="calculate_grade()" onkeydown="jumpToNextInput(event, 'extraCredit')">
 
-    <label for="extraCredit">Extra Credit: </label>
+    <label for="extraCredit">Extra Credit (3 max): </label>
     <input type="number" maxlength="1" min="0" max="3" id="extraCredit" oninput="calculate_grade()">
 
     <p id="grade"></p>
